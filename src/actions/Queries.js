@@ -1,7 +1,7 @@
-import { START_LOADING, END_LOADING, CREATE_QUERY } from '../constants/actionTypes';
-import * as api from '../api/index.js';
+const { START_LOADING, END_LOADING, CREATE_QUERY } = require('../constants/actionTypes');
+const api = require('../api/index.js');
 
-export const create_query = (query, history) => async (dispatch) => {
+const create_query = (query, history) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     console.log('-'.repeat(30));
@@ -38,3 +38,5 @@ export const create_query = (query, history) => async (dispatch) => {
     dispatch({ type: END_LOADING });
   }
 };
+
+module.exports = { create_query };

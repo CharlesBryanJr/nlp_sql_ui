@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { 
+const React = require('react');
+const { useState } = require('react');
+const { 
   TextField, 
   Button, 
   Checkbox, 
@@ -16,12 +17,11 @@ import {
   Select,
   MenuItem,
   Link
-} from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import OpenInNewIcon from '@material-ui/icons/OpenInNew';
-import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch } from 'react-redux';
-import { create_query } from '../../actions/Queries';
+} = require('@material-ui/core');
+const ExpandMoreIcon = require('@material-ui/icons/ExpandMore').default;
+const { makeStyles } = require('@material-ui/core/styles');
+const { useDispatch } = require('react-redux');
+const { create_query } = require('../../actions/Queries');
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -127,8 +127,6 @@ const Query = () => {
     e.preventDefault();
     try {
       const result = await dispatch(create_query({ ...state, action }));
-      console.log('result');
-      console.log(result);
       setState(prev => ({
         ...prev,
         query: result.query || prev.query,
@@ -300,4 +298,4 @@ const Query = () => {
   );
 };
 
-export default Query;
+module.exports = Query;

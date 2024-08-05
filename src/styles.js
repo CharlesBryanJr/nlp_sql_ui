@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+const { makeStyles } = require('@material-ui/core/styles');
 
 export const darkTheme = createTheme({
   palette: {

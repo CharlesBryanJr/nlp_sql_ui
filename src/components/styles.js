@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
+const { makeStyles } = require('@material-ui/core/styles');
 
-export default makeStyles(() => ({
+module.exports = makeStyles(() => ({
   ul: {
     justifyContent: 'space-around',
   },

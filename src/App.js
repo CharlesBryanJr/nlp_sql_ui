@@ -1,42 +1,34 @@
-import React from 'react';
-import { Container, CssBaseline } from '@material-ui/core';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+const React = require('react');
+const { Container, CssBaseline } = require('@material-ui/core');
+const { BrowserRouter, Switch, Route, Redirect } = require('react-router-dom');
+const { createTheme, ThemeProvider } = require('@material-ui/core/styles');
 
-import Navbar from './components/Navbar/Navbar';
-import Auth from './components/Auth/Auth';
-import Dashboard from './components/Dashboard/Dashboard';
-import Carriers from './components/Carriers/Carriers';
-import CreateCarrier_TP from './components/Carriers/CreateCarrier/CreateCarrier_TP';
-import Loads from './components/Loads/Loads';
-import CreateLoad_TP from './components/Loads/CreateLoad/CreateLoad_TP';
-import Invoices from './components/Invoices/Invoices';
-import CreateInvoice_TP from './components/Invoices/CreateInvoice/CreateInvoice_TP';
-import Draft from './components/Drafts/Draft';
-import Query from './components/Queries/Query';
+const Navbar = require('./components/Navbar/Navbar');
+const Dashboard = require('./components/Dashboard/Dashboard');
+const Query = require('./components/Queries/Query');
 
 const darkTheme = createTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#90caf9', // You can keep this or adjust as needed
+      main: '#90caf9',
     },
     secondary: {
-      main: '#f48fb1', // You can keep this or adjust as needed
+      main: '#f48fb1',
     },
     background: {
-      default: '#787878', // Significantly lighter than before
-      paper: '#888888', // Significantly lighter than before
+      default: '#787878',
+      paper: '#888888',
     },
     text: {
       primary: '#ffffff',
-      secondary: '#c0c0c0', // Lighter secondary text for better contrast
+      secondary: '#c0c0c0',
     },
   },
 });
 
 const App = () => {
-  const user = JSON.parse(localStorage.getItem('profile'));
+  // const user = JSON.parse(localStorage.getItem('profile'));
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -55,4 +47,4 @@ const App = () => {
   );
 };
 
-export default App;
+module.exports = App;

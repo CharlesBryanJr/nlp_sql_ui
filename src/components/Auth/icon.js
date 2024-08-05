@@ -1,4 +1,4 @@
-import React from 'react';
+const React = require('react');
 
 const icon = () => (
   <svg style={{ width: '20px', height: '20px' }} viewBox="0 0 24 24">
@@ -9,4 +9,4 @@ const icon = () => (
   </svg>
 );
 
-export default icon;
+module.exports = icon;

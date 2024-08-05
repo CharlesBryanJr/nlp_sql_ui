@@ -1,5 +1,5 @@
-import { makeStyles, createTheme } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
+const { makeStyles, createTheme } = require('@material-ui/core/styles');
+const { deepPurple } = require('@material-ui/core/colors');
 
 const darkTheme = createTheme({
   palette: {
@@ -18,7 +18,7 @@ const darkTheme = createTheme({
   },
 });
 
-export default makeStyles((theme) => ({
+module.exports = makeStyles((theme) => ({
   mainContainer: {
     borderRadius: 15,
     margin: '30px 0',

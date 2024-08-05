@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+const { makeStyles } = require('@material-ui/core/styles');
 
 const useStyles = makeStyles((theme) => ({
   appBarSearch: {
@@ -43,4 +43,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default useStyles;
+module.exports = useStyles;

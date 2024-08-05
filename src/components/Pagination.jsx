@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Pagination, PaginationItem } from '@material-ui/lab';
-import { Link } from 'react-router-dom';
+const React = require('react');
+const { useEffect } = require('react');
+const { useDispatch, useSelector } = require('react-redux');
+const { Pagination, PaginationItem } = require('@material-ui/lab');
+const { Link } = require('react-router-dom');
 
-import { getPosts } from '../actions/posts';
-import useStyles from './styles';
+const { getPosts } = require('../actions/posts');
+const useStyles = require('./styles').default;
 
 const Paginate = ({ page }) => {
   const { numberOfPages } = useSelector((state) => state.posts);
@@ -33,4 +34,4 @@ const Paginate = ({ page }) => {
   );
 };
 
-export default Paginate;
+module.exports = Paginate;

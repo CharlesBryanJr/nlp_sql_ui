@@ -1,12 +1,8 @@
-import { combineReducers } from 'redux';
+const { combineReducers } = require('redux');
+const authReducer = require('./auth');
 
-import posts from './posts';
-import auth from './auth';
+const rootReducer = combineReducers({
+    auth: authReducer
+});
 
-import Carriers from './Carriers';
-import Invoices from './Invoices';
-import Loads from './Loads';
-
-export const reducers = combineReducers(
-    { posts, auth, Carriers, Loads, Invoices }
-);
+module.exports = rootReducer;

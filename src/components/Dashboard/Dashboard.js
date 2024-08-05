@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Typography } from '@material-ui/core';
-import useStyles from './styles.js';
+const React = require('react');
+const { Link } = require('react-router-dom');
+const { Typography } = require('@material-ui/core');
+const useStyles = require('./styles.js');
 
 const Dashboard = () => {
   const classes = useStyles();
@@ -27,4 +27,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+module.exports = Dashboard;

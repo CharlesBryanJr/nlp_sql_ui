@@ -1,4 +1,4 @@
-import * as actionType from '../constants/actionTypes';
+const actionType = require('../constants/actionTypes');
 
 const authReducer = (state = { authData: null }, action) => {
   switch (action.type) {
@@ -16,4 +16,4 @@ const authReducer = (state = { authData: null }, action) => {
   }
 };
 
-export default authReducer;
+module.exports = authReducer;

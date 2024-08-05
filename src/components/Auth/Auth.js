@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
-import { GoogleLogin } from 'react-google-login';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+const React = require('react');
+const { useState } = require('react');
+const { useDispatch } = require('react-redux');
+const { Avatar, Button, Paper, Grid, Typography, Container } = require('@material-ui/core');
+const { useHistory } = require('react-router-dom');
+const { GoogleLogin } = require('react-google-login');
+const LockOutlinedIcon = require('@material-ui/icons/LockOutlined').default;
 
-import CAB_logo from '../../images/CAB_logo.png';
-import Icon from './icon';
-import { signin, signup } from '../../actions/auth';
-import { AUTH } from '../../constants/actionTypes';
-import useStyles from './styles';
-import Input from './input';
+const CAB_logo = require('../../images/CAB_logo.png').default;
+const Icon = require('./icon').default;
+const { signin, signup } = require('../../actions/auth');
+const { AUTH } = require('../../constants/actionTypes');
+const useStyles = require('./styles').default;
+const Input = require('./input').default;
 
 const initialState = {
   firstName: '',
@@ -122,4 +123,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+module.exports = SignUp;
