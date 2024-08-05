@@ -45,8 +45,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
     "@redux-devtools/core": "^3.13.1",
     "@redux-devtools/dock-monitor": "^3.0.1",
-    "@redux-devtools/log-monitor": "^4.0.2"
+    "@redux-devtools/log-monitor": "^4.0.2",
+    "babel-loader": "^9.1.3"
   }
 }
