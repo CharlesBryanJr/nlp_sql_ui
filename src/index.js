@@ -7,11 +7,17 @@ const rootReducer = require('./reducers');
 const App = require('./App');
 require('./index.css');
 
-const store = createStore(rootReducer, {}, compose(applyMiddleware(thunk)));
+const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
-);
+const rootElement = document.getElementById('root');
+
+if (rootElement) {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    rootElement
+  );
+} else {
+  console.error("Failed to find the root element");
+}
