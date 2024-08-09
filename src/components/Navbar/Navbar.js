@@ -10,7 +10,7 @@ const { LOGOUT } = require('../../constants/actionTypes');
 const useStyles = require('./styles');
 
 const Navbar = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
@@ -20,23 +20,31 @@ const Navbar = () => {
     dispatch({ type: LOGOUT });
     history.push('/auth');
     setUser(null);
+    localStorage.removeItem('profile');
   }, [dispatch, history]);
 
   useEffect(() => {
-    const token = user?.token;
-
-    if (token) {
-      const decodedToken = jwt_decode(token);
-      const isTokenExpired = decodedToken.exp * 1000 < new Date().getTime();
-
-      if (isTokenExpired) logout();
-    }
-
     const storedProfile = localStorage.getItem('profile');
     if (storedProfile) {
       setUser(JSON.parse(storedProfile));
     }
-  }, [location, logout, user?.token]);
+  }, [location]);
+
+  useEffect(() => {
+    const token = user ? user.token : null;
+
+    const checkTokenExpiration = () => {
+      if (token) {
+        const decodedToken = jwt_decode(token);
+        const isTokenExpired = decodedToken.exp * 1000 < new Date().getTime();
+        if (isTokenExpired) {
+          logout();
+        }
+      }
+    };
+
+    checkTokenExpiration();
+  }, [logout, user]); // Use 'user' directly as a dependency
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">

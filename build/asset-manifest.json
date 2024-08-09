@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b52152e6.chunk.css",
+    "main.js": "/static/js/main.c4eed02b.chunk.js",
+    "main.js.map": "/static/js/main.c4eed02b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.54ab5b4b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.54ab5b4b.js.map",
+    "static/js/2.0064acbf.chunk.js": "/static/js/2.0064acbf.chunk.js",
+    "static/js/2.0064acbf.chunk.js.map": "/static/js/2.0064acbf.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.be7d99de02ea9dbb269d3be7b6a07465.js": "/precache-manifest.be7d99de02ea9dbb269d3be7b6a07465.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b52152e6.chunk.css.map": "/static/css/main.b52152e6.chunk.css.map",
+    "static/js/2.0064acbf.chunk.js.LICENSE.txt": "/static/js/2.0064acbf.chunk.js.LICENSE.txt",
+    "static/media/CAB_logo.png": "/static/media/CAB_logo.914cf750.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54ab5b4b.js",
+    "static/js/2.0064acbf.chunk.js",
+    "static/css/main.b52152e6.chunk.css",
+    "static/js/main.c4eed02b.chunk.js"
+  ]
+}

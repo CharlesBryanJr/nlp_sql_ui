@@ -164,6 +164,7 @@ const Query = () => {
     ));
   };
 
+  // eslint-disable-next-line no-unused-vars
   const [is_interrupt_complete, set_is_interrupt_complete] = useState(false); // State variable to control visibility
 
   return (
