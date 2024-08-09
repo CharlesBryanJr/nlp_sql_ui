@@ -1,22 +1,27 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const { Provider } = require('react-redux');
-const { createStore, applyMiddleware, compose } = require('redux');
-const thunk = require('redux-thunk').default;
-const rootReducer = require('./reducers');
-const App = require('./App');
-require('./index.css');
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './reducers';
+import App from './App';
+import './index.css';
 
-const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
+// Create the Redux store using configureStore from Redux Toolkit
+const store = configureStore({
+  reducer: rootReducer, // Pass the root reducer
+  // You can add middleware and other store enhancers here if needed
+});
 
 const rootElement = document.getElementById('root');
 
 if (rootElement) {
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    rootElement
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
   );
 } else {
   console.error("Failed to find the root element");
